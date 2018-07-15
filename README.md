@@ -9,4 +9,5 @@ Used RecyclerView in case in future this app might have large amount of data to 
 Implemented DataBinding concept to get rid of boilerplate code
 
 How to compile this project:
+  
   Just download or clone & import project into Android Studio
