@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="ArticleBinding">
+
+        <variable
+            name="articleView"
+            type="com.algotechnologies.nytimes.model.dto.Article" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@{articleView.title}"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="6dp"
+            android:paddingStart="6dp"
+            android:text="@{articleView.byLine}"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+
+</layout>
