@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.algotechnologies.nytimes.R;
 import com.algotechnologies.nytimes.model.dto.Article;
+import com.algotechnologies.nytimes.model.util.Helper;
 import com.algotechnologies.nytimes.viewmodel.SplashViewModel;
 
 import java.io.Serializable;
@@ -19,11 +20,21 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        new SplashViewModel(this);
+        if ( isInternetAvailable() ) {
+            new SplashViewModel(this);
+        }
     }
 
     public void displayMessage(String errorMessage) {
         Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean isInternetAvailable() {
+        if (!Helper.checkNetworkAvailablity(getApplicationContext())) {
+            Toast.makeText(this, "No internet connectivity!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 
     public void showNextScreen(List<Article> articleList) {
